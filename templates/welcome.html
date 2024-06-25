@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id = 'master-class-welcome'>
+        <div id="welcome-container">
+            <h1 id = 'welcome-h1'>Welcome, {{ username }}!</h1>
+            <a href="/logout" class="logout-button">Logout</a>
+        </div>
+    </div>
+    <div id ='fill'>
+    </div>
+    <div id = 'master-class-stocks'>
+        <div id = 'stock-container'>
+            <div id ='stock-analyser'>
+                <h1>STOCK ANALYSER</h1>
+            </div>
+            <form action = '/stock_submit' method = 'post'>
+                <div id = 'form'>
+                    <h3 class = 'text-heading'>Enter the symbols of the stock you want to</h3>
+                    <h3 class = 'text-heading'>fetch(comma seperated values)</h3>
+                    <input type="text" id="stock_list" name="stock_list"><br>
+                    <h3 id = 'text-dropdown1'>Enter the time scale</h3>
+                    <select name="time_scale" id="dropdown1">
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                    </select><br>
+                    <h3 id = 'text-dropdown2'>Enter the filter parameters</h3>
+                    <select name="technical_filter" id="dropdown2">
+                        <option value="Price to Earning ratio">Price to Earning ratio</option>
+                        <option value="Average price">Average Price</option>
+                        <option value="Relative Strength Index">Relative Strength Index</option>
+                        <option value="Average volume">Average volume</option>
+                        <option value="Recent closing price">Recent closing price</option>
+                    </select><br>
+            
+                    <input id = 'submit-analyser' type="submit" value="SUBMIT">
+                </div>               
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id = 'master-class-login'>
+        <div class="form-container">
+            <div id = 'Login'>
+                <h2 id = 'LOGIN'>LOGIN</h2>
+            </div>
+            <form action="/login" method="post">
+                <div class="form-group" >
+                    <input id = 'user-l' type="text" name="username" placeholder="Username" required>
+                </div>
+                <div class="form-group" >
+                    <input id = 'psswd-l' type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-group" id = 'button-l-div'>
+                    <button id = 'button-l' type="submit">LOGIN</button>
+                </div>
+            </form>
+            <p id = 'log-register'>Don't have an account? <a href="/register">Register here</a></p>
+        </div>
+    </div>
+</body>
+</html>

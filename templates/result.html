@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+
+        .graph-container {
+            width: 80%; 
+            margin: auto; 
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class = 'stock-result'>
+        <h1>Stock Result</h1>
+    </div>
+    
+
+    <!-- Display the graph using the embedded HTML provided by Plotly -->
+    <div class="graph-container">
+        {{ plots|safe }}
+    </div>
+
+    <!-- Display the technical_filter information as a table -->
+    <div class = 'stock-result'>
+        <h2>Technical Filter Information</h2>
+    </div>
+    <div class = 'table-container-master'>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Serial Number</th>
+                    <th>Symbol</th>
+                    <th>{{value}}</th>
+                </tr>
+                {% for data in table_data.keys() %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ data }}</td>
+                        <td>{{ table_data[data] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        <div>
+    </div>
+    <div id = 'link-dashboard-master'>
+        <a id = 'link-dashboard' href="/dashboard">Check other stocks</a>
+    </div>
+    <!-- You can add more content or styling below if needed -->
+</body>
+</html>
